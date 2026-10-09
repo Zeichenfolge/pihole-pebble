@@ -97,7 +97,7 @@ read-only passwords. It is stored only in the Pebble app on your phone.
 
 ## How this was made
 
-This app was built with a lot of help from Claude (AI) and tested in the emulator and on
+This app was built with help from Claude (AI) and tested in the emulator and on
 my own Pebble Time 2. Bug reports and pull requests are welcome.
 
 ## License
