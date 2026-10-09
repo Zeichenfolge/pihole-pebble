@@ -1,0 +1,50 @@
+name: Build
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  release:
+    types: [published]
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - uses: astral-sh/setup-uv@v6
+
+      - name: Install system libraries
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libsdl2-2.0-0 libglib2.0-0 libpixman-1-0 zlib1g libsndio7.0
+
+      - name: Install Pebble SDK
+        run: |
+          uv tool install pebble-tool --python 3.13
+          yes | pebble sdk install latest
+
+      - name: Build
+        run: pebble build
+
+      - name: Upload build
+        uses: actions/upload-artifact@v4
+        with:
+          name: pihole-pebble
+          path: build/*.pbw
+
+      - name: Attach .pbw to release
+        if: github.event_name == 'release'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          cp build/*.pbw pihole-pebble.pbw
+          gh release upload "${{ github.event.release.tag_name }}" pihole-pebble.pbw --clobber

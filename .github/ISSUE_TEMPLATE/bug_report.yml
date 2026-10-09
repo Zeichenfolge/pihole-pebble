@@ -1,0 +1,53 @@
+name: Bug report / Fehler melden
+description: Something doesn't work as expected
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting! German or English is fine.
+        **Please do not post your password, app password or server address.**
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened? / Was ist passiert?
+      description: What did you do, what did you expect, what happened instead?
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: App version
+      placeholder: "1.0.0"
+    validations:
+      required: true
+  - type: dropdown
+    id: watch
+    attributes:
+      label: Watch / Uhr
+      options:
+        - Pebble Time 2
+        - Emulator (emery)
+        - Other / Andere
+    validations:
+      required: true
+  - type: dropdown
+    id: phone
+    attributes:
+      label: Phone / Handy
+      options:
+        - iOS
+        - Android
+    validations:
+      required: true
+  - type: input
+    id: pihole
+    attributes:
+      label: Pi-hole version (Settings → System)
+      placeholder: "Core v6.x, FTL v6.x"
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs (optional)
+      description: Output of `pebble logs --cloudpebble` while the problem happens. Remove your password and address first.
+      render: text

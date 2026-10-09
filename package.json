@@ -1,0 +1,103 @@
+{
+  "name": "pihole-pebble",
+  "author": "Michael Runge",
+  "version": "1.0.0",
+  "keywords": [
+    "pebble-app"
+  ],
+  "private": true,
+  "dependencies": {
+    "pebble-clay": "^1.0.4"
+  },
+  "pebble": {
+    "displayName": "Pi-hole",
+    "uuid": "fe33af8e-bd3c-4ed7-b5d5-77c36234b480",
+    "sdkVersion": "3",
+    "enableMultiJS": true,
+    "targetPlatforms": [
+      "emery"
+    ],
+    "watchapp": {
+      "watchface": false
+    },
+    "capabilities": [
+      "configurable"
+    ],
+    "messageKeys": [
+      "Type",
+      "Command",
+      "Index",
+      "Num",
+      "Seconds",
+      "Blocking",
+      "Timer",
+      "PercentX10",
+      "Total",
+      "Blocked",
+      "Percent",
+      "Clients",
+      "Gravity",
+      "Updated",
+      "Host",
+      "Domain",
+      "Cname",
+      "Client",
+      "Time",
+      "Count",
+      "Reason",
+      "Flags",
+      "Text",
+      "Lang",
+      "QuickLaunch",
+      "Vibrate",
+      "CfgUrl",
+      "CfgPassword",
+      "CfgLang",
+      "CfgPause",
+      "CfgQuick",
+      "CfgVibrate",
+      "CfgMax"
+    ],
+    "resources": {
+      "media": [
+        {
+          "type": "bitmap",
+          "name": "IMAGE_MENU_ICON",
+          "file": "images/menu_icon.png",
+          "menuIcon": true
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_REFRESH",
+          "file": "images/refresh.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_PAUSE",
+          "file": "images/pause.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_PLAY",
+          "file": "images/play.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_LIST",
+          "file": "images/list.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_CHECK",
+          "file": "images/check.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_UNDO",
+          "file": "images/undo.png"
+        }
+      ]
+    }
+  },
+  "license": "MIT"
+}

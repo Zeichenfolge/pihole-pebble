@@ -1,0 +1,20 @@
+name: Feature idea / Idee
+description: Suggest something new
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What would you like to do? / Was möchtest du machen?
+      description: Describe the situation, e.g. "I want to see at a glance whether ..."
+    validations:
+      required: true
+  - type: textarea
+    id: idea
+    attributes:
+      label: Your idea / Deine Idee
+      description: How could it work on the watch? Which buttons, which screen?
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives (optional)
